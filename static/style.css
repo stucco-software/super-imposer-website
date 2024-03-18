@@ -1,0 +1,155 @@
+:root {
+  /* Standard Widths */
+  --block: 42rem;
+  --margin: 2em;
+
+  --sans-stack:  -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --blank: #fff;
+  --white: #eeeeee;
+  --black: #292929;
+  --blue: blue;
+
+  --txt-sm: 0.8rem;
+  --txt-base: 1rem;
+  --txt-md: 1.25rem;
+  --txt-lg: 1.56rem;
+  --txt-xl: 1.95rem;
+  --txt-xxl: 2.44rem;
+  --txt-xxxl: 3.05rem;
+
+  --accent: blue;
+}
+
+html {
+  font-size: clamp(16px, 1.5vw, 22px);
+}
+
+body {
+  --bg-color: var(--white);
+  --txt-color: var(--black);
+
+  font-family: var(--sans-stack);
+  font-size: var(--txt-base);
+  line-height: 1.166;
+  font-weight: 400;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+  margin: 1rem;
+}
+/*@media screen and (prefers-color-scheme: dark) {
+  body {
+    --bg-color: var(--black);
+    --txt-color: var(--white);
+  }
+}*/
+@media screen and (min-width: 32rem) {
+  body {
+    margin-top: var(--margin);
+  }
+}
+
+h1 {
+  font-size: var(--txt-lg);
+  margin-top: 1rem;
+}
+h2 {
+  font-size: var(--txt-md);
+  margin-bottom: 0.5rem;
+}
+h3 {
+  font-size: var(--txt-base);
+  margin-bottom: 0.5rem;
+}
+
+header,
+section {
+  max-width: var(--block);
+  margin: auto;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--txt-color);
+}
+header {
+/*  display: grid;*/
+/*  grid-template-columns: 1fr 1fr;*/
+}
+header p {
+ font-size: var(--txt-md);
+ margin-top: 0.5rem;
+}
+p {
+  max-width: 24em;
+}
+ol,
+ul {
+  padding-inline: 1.5rem;
+  margin-block: 0;
+}
+li {
+  margin-block: 0.5rem;
+}
+
+a {
+  cursor: pointer;
+}
+a:focus,
+a:hover {
+  color: var(--accent);
+}
+
+.button {
+  color: var(--txt-color);
+  border: 1px solid var(--txt-color);
+  background-color: var(--blank);
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button:focus
+.button:hover {
+  background-color: var(--background-color);
+}
+
+.center {
+  text-align: center;
+}
+.small {
+  font-size: var(--txt-sm);
+}
+
+@media screen and (min-width: 36rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  .big-center {
+    text-align: center;
+  }
+  .grid div {
+    grid-row: 1;
+  }
+  .grid figure {
+    grid-column: 2;
+  }
+}
+
+article section .grid {
+  gap: 2rem;
+}
+
+figure {
+  border: 1px solid var(--txt-color);
+  background-color: var(--blank);
+}
+caption {
+  display: block;
+  padding: 0.5rem;
+  font-style: italic;
+  text-align: right;
+}
+footer {
+  max-width: var(--block);
+  margin: auto;
+}
