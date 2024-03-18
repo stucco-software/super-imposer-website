@@ -1,9 +1,28 @@
 <script type="text/javascript">
   import Logo from '$lib/Logo.svelte'
+  import Checkout from '$lib/Checkout.svelte'
+  import { page } from '$app/stores'
+
+
+  let dialog
+  const openDialog = () => {
+    dialog.showModal()
+  }
+  const closeDialog = () => {
+    dialog.close()
+  }
 </script>
 
-<header id="head">
+<dialog bind:this={dialog}>
+  <Checkout />
+  <p class="center">
+    <button on:click={closeDialog}>
+      Nevermind
+    </button>
+  </p>
+</dialog>
 
+<header id="head">
   <Logo />
   <h1>
     Super Imposer 3000
@@ -52,21 +71,30 @@
   </section>
 
   <section>
-    <h2>Purchase</h2>
+    <h2 id="purchase">
+      Purchase
+    </h2>
+
     <div class="grid">
       <div>
         <p>
           Super Imposer 3000 is free, community supported software. Choose-your-price donations allows us to keep working on projects like this.
         </p>
       </div>
+
       <p class="big-center">
-        <a
-          class="button"
-          href="/purchase">
-          Donate
-        </a>
+        <!-- <Checkout /> -->
+        {#if $page.url.searchParams.get('session_id')}
+          <b>Thank you</b> for supporting <b>Super Imposer</b>
+        {:else}
+          <button on:click={openDialog}>
+            Purchase
+          </button>
+        {/if}
       </p>
     </div>
+
+
   </section>
 
   <section>
@@ -329,7 +357,7 @@
   <p>
     <a href="#head">Home</a>
     <a href="#docs">Docs</a>
-    <a href="/purchase">Purchase</a>
+    <a href="#purchase">Purchase</a>
   </p>
   <p>
     By <a href="https://stucco.software">Stucco Software</a>
