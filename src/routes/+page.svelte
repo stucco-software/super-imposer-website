@@ -13,6 +13,8 @@
   }
 </script>
 
+<pushbroom url="/"/>
+
 <dialog bind:this={dialog}>
   <!-- <Checkout /> -->
   <p class="center">
