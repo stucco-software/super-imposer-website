@@ -24,6 +24,7 @@
 
 <header id="head">
   <Logo />
+
   <h1>
     Super Imposer 3000
   </h1>
@@ -45,7 +46,7 @@
 
 <main>
   <section>
-    <h2>
+    <h2 id="download">
       Download
     </h2>
     <p>
@@ -360,7 +361,7 @@
 
 <footer>
   <p>
-    <a href="#head">Home</a>
+    <a href="#download">Download</a>
     <a href="#docs">Docs</a>
     <a href="#purchase">Purchase</a>
   </p>
