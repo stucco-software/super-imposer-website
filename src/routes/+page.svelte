@@ -1,6 +1,6 @@
 <script type="text/javascript">
   import Logo from '$lib/Logo.svelte'
-  import Checkout from '$lib/Checkout.svelte'
+  // import Checkout from '$lib/Checkout.svelte'
   import { page } from '$app/stores'
 
 
@@ -14,7 +14,7 @@
 </script>
 
 <dialog bind:this={dialog}>
-  <Checkout />
+  <!-- <Checkout /> -->
   <p class="center">
     <button on:click={closeDialog}>
       Nevermind
@@ -87,9 +87,14 @@
         {#if $page.url.searchParams.get('session_id')}
           <b>Thank you</b> for supporting <b>Super Imposer</b>
         {:else}
-          <button on:click={openDialog}>
+          <a
+            class="button"
+            href="https://buy.stripe.com/28ocPhgWg0UteJO000">
             Purchase
-          </button>
+          </a>
+          <!-- <button on:click={openDialog}>
+            Purchase
+          </button> -->
         {/if}
       </p>
     </div>
